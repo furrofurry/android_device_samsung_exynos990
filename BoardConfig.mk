@@ -103,3 +103,35 @@ TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# OrangeFox / TWRP
+
+RECOVERY_SDCARD_ON_DATA := true
+
+# Filesystems
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USES_MKE2FS := true
+
+# Metadata + encryption
+BOARD_USES_METADATA_PARTITION := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+
+# Fastbootd
+TW_INCLUDE_FASTBOOTD := true
+
+# Useful recovery tools
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP := true
+
+# Logging
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+
+# Filesystem / language extras
+TW_INCLUDE_NTFS_3G := true
+TW_EXTRA_LANGUAGES := true
