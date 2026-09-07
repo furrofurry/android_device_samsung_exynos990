@@ -1,9 +1,7 @@
-#
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 The TWRP Open Source Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+#!/bin/bash
 
-# For building with minimal manifest
 export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_BUILD_DEVICE="z3s"
+
+# Dynamic partition tools
+export OF_ENABLE_ALL_PARTITION_TOOLS=1
