@@ -1,4 +1,4 @@
-# TWRP Device Tree for Samsung Galaxy devices with Exynos 990
+# TWRP Device Tree for Samsung Galaxy S20 Ultra 5G (Exynos)
 
 ## Device specifications
 
@@ -23,7 +23,11 @@ The recovery configuration includes Android file-based encryption v2,
 metadata encryption, and Samsung's TEEGRIS-backed Keymaster and Gatekeeper
 services. The companion repositories declared in `twrp.dependencies` must be
 synced before building so the Samsung HAL sources, proprietary libraries, and
+
+TEE trustlets are available. The dependency list includes both the common Exynos 990
+blobs and the Galaxy S20 Ultra-specific `z3s` trustlets and `tzdaemon`.
 TEE trustlets are available.
+
 
 ## How to build
 
@@ -34,14 +38,14 @@ This device tree was tested and is fully compatible with [minimal-manifest-twrp]
 2. In the root folder of the fetched repo, clone the device tree:
 
 ```bash
-git clone https://github.com/ExtremeXT/android_device_samsung_exynos990.git -b android-12.1 device/samsung/exynos990
+git clone https://github.com/ExtremeXT/android_device_samsung_exynos990.git -b android-12.1 device/samsung/z3s
 ```
 
 3. To build:
 
 ```bash
 . build/envsetup.sh
-lunch twrp_x1s-eng
+lunch twrp_z3s-eng
 mka recoveryimage
 ```
 

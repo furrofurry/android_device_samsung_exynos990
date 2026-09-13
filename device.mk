@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     vendor/samsung/universal9830-common \
-    vendor/samsung/x1s
+    vendor/samsung/z3s
 
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper-service.teegris \
@@ -37,14 +37,15 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor \
     libkeymaster_helper \
     libskeymaster4device \
-    tzts_daemon
+    tzdaemon \
 
 $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9830-common:libskeymaster4device)
 
-# Install the complete TEEGRIS trustlet set without pulling unrelated runtime
-# blobs into the recovery ramdisk.
+# Install both common and Galaxy S20 Ultra TEEGRIS trustlet sets without
+# pulling unrelated runtime blobs into the recovery ramdisk.
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/samsung/universal9830-common/proprietary/vendor/tee,$(TARGET_COPY_OUT_VENDOR)/tee)
+    $(call find-copy-subdir-files,*,vendor/samsung/universal9830-common/proprietary/vendor/tee,$(TARGET_COPY_OUT_VENDOR)/tee) \
+    $(call find-copy-subdir-files,*,vendor/samsung/z3s/proprietary/vendor/tee,$(TARGET_COPY_OUT_VENDOR)/tee)
 
 # Match the metadata-encryption parameters used by Android on Exynos 990.
 PRODUCT_VENDOR_PROPERTIES += \
