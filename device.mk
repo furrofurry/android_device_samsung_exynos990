@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor \
     libkeymaster_helper \
     libskeymaster4device \
-    tzdaemon \
+    tzdaemon
 
 $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9830-common:libskeymaster4device)
 
