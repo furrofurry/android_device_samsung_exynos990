@@ -23,8 +23,11 @@ The recovery configuration includes Android file-based encryption v2,
 metadata encryption, and Samsung's TEEGRIS-backed Keymaster and Gatekeeper
 services. The companion repositories declared in `twrp.dependencies` must be
 synced before building so the Samsung HAL sources, proprietary libraries, and
+
 TEE trustlets are available. The dependency list includes both the common Exynos 990
 blobs and the Galaxy S20 Ultra-specific `z3s` trustlets and `tzdaemon`.
+TEE trustlets are available.
+
 
 ## How to build
 
