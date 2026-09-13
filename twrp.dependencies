@@ -1,9 +1,9 @@
 [
   {
-    "repository": "LineageOS/android_hardware_samsung",
+    "repository": "furrofurry/android_hardware_samsung",
     "target_path": "hardware/samsung",
     "remote": "github",
-    "revision": "lineage-23.2"
+    "revision": "fox-14.1-z3s"
   },
   {
     "repository": "LineageOS/android_hardware_lineage_compat",
