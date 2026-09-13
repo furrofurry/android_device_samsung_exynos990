@@ -1,18 +1,22 @@
 on early-init
     mkdir /mnt/vendor/efs 0771 radio system
+    mkdir /mnt/vendor/cpefs 0771 radio system
 
 on post-fs
     mkdir /mnt/vendor/efs/tee 0700 system system
     mkdir /dev/socket/iwt 0770 system system
     mkdir /dev/socket/iwt/ca 0770 system system
+
     start tz_service
     wait_for_prop vendor.tzdaemon Ready
+
     setprop vendor.TEEGRIS.loaded true
     write /proc/iccc_ready 1
+
     start tzts_service
     wait_for_prop vendor.tzts_daemon Ready
 
-on post-fs-data
+on post-fs-dataAdd the missing CPEFS mountpoint creation
     mkdir /data/vendor/tee 0700 system system
     mkdir /data/vendor/gatekeeper 0771 system system
     setprop vold.post_fs_data_done 1
