@@ -32,11 +32,12 @@ BOARD_VENDOR := $(or $(word 2,$(subst /, ,$(firstword $(MAKEFILE_LIST)))),$(valu
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
 PRODUCT_NAME := $(CUSTOM_VENDOR)_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := $(BOARD_VENDOR)
-PRODUCT_MODEL := $(shell echo $(PRODUCT_BRAND) | tr  '[:lower:]' '[:upper:]')_$(PRODUCT_DEVICE)
+PRODUCT_MODEL := Samsung Galaxy S20 Ultra 5G
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
 
-# Default device path for tree
-DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)
+# Resolve the tree root from this product file so the repository works when
+# checked out either as device/samsung/exynos990 or device/samsung/<codename>.
+DEVICE_PATH := $(patsubst %/,%,$(dir $(firstword $(MAKEFILE_LIST))))
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)/$(PRODUCT_DEVICE)/device.mk)
+$(call inherit-product, $(DEVICE_PATH)/$(PRODUCT_DEVICE)/device.mk)

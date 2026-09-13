@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "LineageOS/android_hardware_samsung",
+    "target_path": "hardware/samsung",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "TheMuppets/proprietary_vendor_samsung_universal9830-common",
+    "target_path": "vendor/samsung/universal9830-common",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "TheMuppets/proprietary_vendor_samsung_z3s",
+    "target_path": "vendor/samsung/z3s",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  }
+]
