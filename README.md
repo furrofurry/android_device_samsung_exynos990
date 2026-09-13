@@ -17,9 +17,13 @@ Available at [https://github.com/ExtremeXT/990_upstream_v2/](https://github.com/
 
 * Note: The kernel has been compiled with the --recovery flag set to y.
 
-## Bugs
+## Encryption support
 
-- /data decryption
+The recovery configuration includes Android file-based encryption v2,
+metadata encryption, and Samsung's TEEGRIS-backed Keymaster and Gatekeeper
+services. The companion repositories declared in `twrp.dependencies` must be
+synced before building so the Samsung HAL sources, proprietary libraries, and
+TEE trustlets are available.
 
 ## How to build
 
