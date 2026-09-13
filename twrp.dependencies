@@ -4,7 +4,36 @@
     "target_path": "hardware/samsung",
     "remote": "github",
     "revision": "lineage-23.2"
-
+  },
+  {
+    "repository": "LineageOS/android_hardware_lineage_compat",
+    "target_path": "hardware/lineage/compat",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "LineageOS/android_device_samsung_universal9830-common",
+    "target_path": "device/samsung/universal9830-common",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "LineageOS/android_hardware_samsung_slsi-linaro_exynos",
+    "target_path": "hardware/samsung_slsi-linaro/exynos",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "LineageOS/android_hardware_samsung_slsi-linaro_graphics",
+    "target_path": "hardware/samsung_slsi-linaro/graphics",
+    "remote": "github",
+    "revision": "lineage-23.2"
+  },
+  {
+    "repository": "LineageOS/android_hardware_samsung_slsi-linaro_interfaces",
+    "target_path": "hardware/samsung_slsi-linaro/interfaces",
+    "remote": "github",
+    "revision": "lineage-23.2"
   },
   {
     "repository": "TheMuppets/proprietary_vendor_samsung_universal9830-common",
@@ -17,6 +46,5 @@
     "target_path": "vendor/samsung/z3s",
     "remote": "github",
     "revision": "lineage-23.2"
-
   }
 ]
