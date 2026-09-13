@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
 # Samsung TEE-backed credential and encryption services.  The implementation
 # and its stock libraries are supplied by the repositories in
 # twrp.dependencies.
+# Samsung TEE-backed credential and encryption services
 PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     vendor/samsung/universal9830-common \
@@ -37,17 +38,19 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor \
     libkeymaster_helper \
     libskeymaster4device \
-    tzdaemon
+    libteecl \
+    libuuid_vendor \
+    tzdaemon \
+    tzts_daemon
 
 $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9830-common:libskeymaster4device)
 
-# Install both common and Galaxy S20 Ultra TEEGRIS trustlet sets without
-# pulling unrelated runtime blobs into the recovery ramdisk.
+# Common + z3s-specific TEEGRIS trustlets
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/samsung/universal9830-common/proprietary/vendor/tee,$(TARGET_COPY_OUT_VENDOR)/tee) \
     $(call find-copy-subdir-files,*,vendor/samsung/z3s/proprietary/vendor/tee,$(TARGET_COPY_OUT_VENDOR)/tee)
 
-# Match the metadata-encryption parameters used by Android on Exynos 990.
+# Metadata/FBE encryption configuration
 PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.metadata_init_delete_all_keys.enabled=true \
